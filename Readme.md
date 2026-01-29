@@ -1,5 +1,7 @@
 # 🚀 Projeto Fullstack - Sistema de Vistorias (EPTA)
 
+Infelizmente o Projeto não conseguiu ser totalmente Desenvolvido, o Backend está com falhas e sem comunicação com o Frontend que por sua vez não teve todas as paginas e funcionalidades desenvolvidas
+
 Este projeto é uma aplicação **Fullstack** desenvolvida com:
 
 -   Backend: **Node.js + NestJS + Prisma + PostgreSQL**
