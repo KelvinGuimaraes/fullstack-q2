@@ -22,12 +22,12 @@ export function Login() {
     }
   }
 
-  function loginTeste(email: string, password: string) {
+  function loginTeste(email: string, password: string, redirectPath: string) {
     api
       .post("/auth/login", { email, password })
       .then((res) => {
         localStorage.setItem("token", res.data.token);
-        window.location.href = "/";
+        window.location.href = redirectPath;
       })
       .catch(() => alert("Erro ao logar"));
   }
@@ -110,7 +110,7 @@ export function Login() {
         <div className="space-y-3">
           {/* Vendedor */}
           <button
-            onClick={() => loginTeste("vendedor@teste.com", "123456")}
+            onClick={() => loginTeste("vendedor@teste.com", "123456", "/vendedor")}
             className="w-full border rounded-lg p-3 flex items-center gap-3 hover:bg-gray-50 transition"
           >
             <User className="text-gray-500" />
@@ -124,7 +124,7 @@ export function Login() {
 
           {/* Vistoriador */}
           <button
-            onClick={() => loginTeste("admin@teste.com", "123456")}
+            onClick={() => loginTeste("admin@teste.com", "123456", "/dashboard")}
             className="w-full border rounded-lg p-3 flex items-center gap-3 hover:bg-gray-50 transition"
           >
             <User className="text-gray-500" />

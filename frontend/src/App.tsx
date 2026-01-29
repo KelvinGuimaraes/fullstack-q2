@@ -1,13 +1,12 @@
-import { Routes, Route } from 'react-router-dom'
+import { Routes, Route } from "react-router-dom";
 
-import { Login } from './pages/Login'
-import { Dashboard } from './pages/Dashboard'
-import { PrivateRoute } from './routes/PrivateRoute'
+import { Login } from "./pages/Login";
+import Dashboard from "./pages/Vistorias";
+import { PrivateRoute } from "./routes/PrivateRoute";
 
 function App() {
   return (
     <Routes>
-
       <Route path="/login" element={<Login />} />
 
       <Route
@@ -19,8 +18,34 @@ function App() {
         }
       />
 
+      <Route
+        path="/vistorias"
+        element={
+          <PrivateRoute>
+            <Dashboard />
+          </PrivateRoute>
+        }
+      />
+
+      <Route
+        path="/dashboard"
+        element={
+          <PrivateRoute>
+            <Dashboard />
+          </PrivateRoute>
+        }
+      />
+
+      <Route
+        path="/vendedor"
+        element={
+          <PrivateRoute>
+            <div>Página de Vendedor (em construção)</div>
+          </PrivateRoute>
+        }
+      />
     </Routes>
-  )
+  );
 }
 
-export default App
+export default App;
